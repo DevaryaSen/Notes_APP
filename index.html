@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fix 1: Font Awesome was missing -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Notes App</title>
+</head>
+<body>
+    <!-- Fix 2: Removed the stray <div id="notes"> that was inside <nav> -->
+    <nav id="nav">
+        <h3 id="APP_NAME">NOTES APP</h3>
+        <button id="ADD_TASK_BTN">
+            <i class="fa-solid fa-plus"></i>
+            Add Note
+        </button>
+    </nav>
+
+    <section>
+        <!-- Fix 3: Only one #notes div now, in the right place -->
+        <div id="notes"></div>
+    </section>
+
+    <!-- Add Note Modal -->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <!-- Fix 4: Added a close button for the add-note modal -->
+            <button id="closeModal">❌</button>
+            <input type="text" id="noteTitle" placeholder="Title">
+            <textarea id="noteBody" placeholder="Write your note"></textarea>
+            <button id="saveBtn">Save</button>
+        </div>
+    </div>
+
+    <!-- View Note Modal -->
+    <div id="viewModal" class="hidden">
+        <div class="modal-content">
+            <button id="cancel">❌</button>
+            <h2 id="viewTitle"></h2>
+            <p id="viewBody"></p>
+            <button id="deleteBtn">Delete</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
